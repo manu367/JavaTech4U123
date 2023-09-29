@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+          integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/admin.css}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+<div class="main">
+    <div class="bars-1 rounded shadow border border-1" style="overflow: auto;">
+        <div th:replace="~{fragements/adminSidebar::adminsidebar}"></div>
+    </div>
+    <div class="bars-2">
+        <div class="container mb-3">
+            <div class="row mt-2">
+                <div class="col-md-12">
+                    <div class="bg-white rounded border p-3 text-center">
+                        <h3>Here are All Projects Listed</h3>
+                        <span>Total Courses = <strong><span th:text="${courses.size()}"></span></strong></span>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col-md-12">
+                    <div class="rounded border bg-white">
+                        <table class="table text-center table-hover table-striped">
+                            <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Projects Name</th>
+                                <th scope="col">Catgeory</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <th:block th:each="cou:${courses}">
+                                <tr>
+                                    <th scope="row" th:text="${cou.getId()}">1</th>
+                                    <td th:text="${cou.getName()}">Mark</td>
+
+                                    <td class="d-flex flex-row justify-content-center">
+                                        <select class="form-select w-50" aria-label="Default select example" th:if="${cou?.getCategoryModel()?.getCategoryname()!=null}">
+                                            <option selected th:text="${cou?.getCategoryModel()?.getCategoryname()}" th:value="${cou?.getCategoryModel()?.getId()}"></option>
+                                        </select>
+                                        <select class="form-select w-50" aria-label="Default select example" th:unless="${cou?.getCategoryModel()?.getCategoryname()!=null}">
+                                            <option selected>Select a category</option>
+                                            <option th:each="catg:${catgeory}" th:text="${catg.getCategoryname()}" th:value="${catg.getId()}+','+${catg.getCategoryname()}"></option>
+                                        </select>
+                                    </td>
+
+                                    <td><button class="btn btn-danger" th:attr="onclick='onsavebutton('+${cou.getId()}+',this)'">Save</button></td>
+                                </tr>
+                            </th:block>
+                            </tbody>
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<span id="manu"></span>
+</body>
+<script>
+    function onsavebutton(courseidid,element){
+        var value=element.parentElement.previousElementSibling.querySelector("select").value
+        console.log(value);
+        if(value=="Select a category"){
+            alert("Please select a category");
+            return;
+        }else{
+            var parts=value.split(",");
+            console.log(parts[0].trim());
+            console.log(parts[1].trim());
+            var formdata=new FormData();
+            formdata.append("courseid",courseidid);
+            formdata.append("categoryid",parts[0].trim());
+            formdata.append("categoryname",parts[1].trim());
+            fetch("/admin/updatecoursescategory", {
+                method: "POST",
+                body: formdata,
+            })
+                .then((response) => response.text())
+                .then((data) => {
+                    console.log(data);
+                    window.location.href="/admin/coursescategory";
+                })
+                .catch((error) => console.error(error));
+        }
+    }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+
+<script>
+
+    var nav=document.getElementById("nav");
+    for(var i=0;i<nav.childElementCount;i++){
+        nav.children.item(i).classList.add("nav-item");
+        nav.children.item(i).classList.add("mt-5");
+        nav.children.item(i).classList.add("px-4");
+        nav.children.item(i).classList.add("p-1");
+
+    }
+    nav.classList.add("mb-4")
+
+    // fetch("/admin/courses/category/get")
+    //     .then((response)=>response.json())
+    //     .then((data)=>{
+    //         var selectElement = document.querySelectorAll(".form-select");
+    //         selectElement.forEach((itemselect)=>{
+    //             data.forEach((item) => {
+    //                 var option = document.createElement("option");
+    //                 option.value = item.id; // You might need to adjust this based on your JSON structure
+    //                 option.textContent = item.categoryname; // You might need to adjust this based on your JSON structure
+    //                 itemselect.appendChild(option);
+    //             });
+    //         });
+    //     })
+    //     .catch((error)=>console.log(error))
+</script>
+</html>

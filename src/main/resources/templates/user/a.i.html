@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/user_ai.css}">
+    <link rel="stylesheet" th:href="@{/css/user-index.css}">
+</head>
+
+<body style="background-color: rgba(250,240,230,0.27);">
+<div class="container-fluid">
+    <!-- searchbar and menus -->
+    <div class="row border bg-white p-1 mb-3">
+        <div class="col-md-3  text-center">
+            <a href="/" style="visibility: hidden">
+                <img src="../img/javatech.png" alt="" class="img-fluid w-25 ">
+            </a>
+        </div>
+        <div class="col-md-5 flex-row  mt-3">
+            <div class="search-bar bg-white">
+                <input type="search" name="search" id="search" placeholder="Search Courses..">
+                <div style="border-left: 1px solid rgba(0, 0, 0, 0.332);">
+                    <button>
+                        <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/search--v1.png"
+                             alt="search--v1" />
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 ">
+            <div class="mt-3">
+                <ul class="nav flex-row justify-content-end">
+                    <li class="nav-item"><a href="#" class="btn btn-primary text-white">Buy Premium</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Carousel added here -->
+    <div class="row">
+        <div class="col-md-12">
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner rounded">
+                    <div class="carousel-item active rounded">
+                        <img src="https://fastly.picsum.photos/id/4/5000/3333.jpg?hmac=ghf06FdmgiD0-G4c9DdNM8RnBIN7BO0-ZGEw47khHP4" class="d-block w-100 rounded img-fluid" alt="...">
+
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://fastly.picsum.photos/id/8/5000/3333.jpg?hmac=OeG5ufhPYQBd6Rx1TAldAuF92lhCzAhKQKttGfawWuA" class="d-block w-100 rounded img-fluid" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://fastly.picsum.photos/id/7/4728/3168.jpg?hmac=c5B5tfYFM9blHHMhuu4UKmhnbZoJqrzNOP9xjkV4w3o" class="d-block w-100 rounded img-fluid" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- here ai tool put here -->
+    <div class="row mt-3 mb-5">
+        <div class="col-md-4 order-lg-1 order-2">
+            <div class="flex-column text-center">
+                <div class="w-100 p-3 mt-2 rounded" style="background-color: rgba(128, 128, 128, 0.1);">
+                    <img class="remove" style="float: right;cursor: pointer;" width="30" height="30" src="https://img.icons8.com/ios/50/multiply.png" alt="multiply" onclick="removeelemtn(this)"/>
+                    <img src="https://picsum.photos/id/237/200/300" width="300" height="200" class=" rounded">
+                </div>
+                <div class="w-100 p-3 mt-2 rounded" style="background-color: rgba(128, 128, 128, 0.1)">
+                    <img class="remove" style="float: right;cursor: pointer;" width="30" height="30" src="https://img.icons8.com/ios/50/multiply.png" alt="multiply" onclick="removeelemtn(this)"/>
+                    <img src="https://picsum.photos/id/237/200/300" width="300" height="200" class=" rounded">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8 order-lg-2 order-1">
+            <div class="container-fluid">
+                <div class="row">
+                   <th:block th:each="category:${aiCategoryList}">
+                       <div class="col-12 mt-3 rounded border p-2 bg-white">
+                           <h4 class="heading mx-3" th:text="${category.getCategoryname()}">Texted based Ai Tools</h4>
+                           <div class="courses">
+                               <a style="box-sizing: border-box;text-decoration: none;"
+                                  th:href="${aimodel.getLink()}" class="card m-1 text-center" th:each="aimodel:${category.getAiModelList()}">
+                                   <div class="p-2">
+                                       <img class=" img-fluid"
+                                            alt="Splunk tutorial"
+                                            th:src="${aimodel.getAi_images().getImagelink()}">
+                                       <p th:text="${aimodel.getName()}">Splunk</p>
+                                   </div>
+                               </a>
+                           </div>
+                       </div>
+                   </th:block>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+</body>
+
+
+<script>
+
+    function removeelemtn(elements){
+        var parent=elements.parentNode;
+        parent.remove(elements);
+    }
+
+    /* var remove=document.getElementById("remove");
+     var parent=remove.parentNode.parentNode.parentNode;
+     parent.remove(remove);
+     console.log();*/
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+</html>

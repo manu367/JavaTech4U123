@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:fragment="adminsidebar">
+    <ul  id="nav">
+        <li>
+            <i class="fa-solid fa-house"></i>
+            <span class="mx-3 "><a href="/admin" style="text-decoration: none;color: rgb(3, 32, 74);">Home</a></span>
+        </li>
+        <li>
+            <i class="fa-solid fa-house"></i>
+            <span class="mx-3 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Projects</span>
+            <ul class="dropdown-menu" style="text-overflow: clip;overflow: hidden;word-break: break-all; width: 5.5rem">
+                <li><a class="dropdown-item" href="/admin/projects">All Projects</a></li>
+                <li><a class="dropdown-item" href="/admin/addprojects">Add new</a></li>
+                <li><a class="dropdown-item" href="/admin/categoryprojects">Category</a></li>
+            </ul>
+        </li>
+
+        <li><i class="fa-solid fa-house"></i><span class="mx-3"><a href="/admin/message" style="text-decoration: none;color: rgb(3, 32, 74);">Message</a></span></li>
+        <li>
+            <i class="fa-solid fa-house"></i>
+            <span class="mx-3 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">A.I</span>
+            <ul class="dropdown-menu" style="text-overflow: clip;overflow: hidden;word-break: break-all; width: 5.5rem">
+                <li><a class="dropdown-item" href="/admin/a.i">All AIs</a></li>
+                <li><a class="dropdown-item" href="/admin/a.i/add">Add new</a></li>
+            </ul>
+        </li>
+
+        <li>
+            <i class="fa-solid fa-house"></i>
+            <span class="mx-3 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Pages</span>
+            <ul class="dropdown-menu" style="text-overflow: clip;overflow: hidden;word-break: break-all; width: 5.5rem">
+                <li><a class="dropdown-item" href="/admin/pages">All Pages</a></li>
+                <li><a class="dropdown-item" href="/admin/add/pages">Add new</a></li>
+                <li><a class="dropdown-item" href="/admin/category/pages">Category</a></li>
+            </ul>
+        </li>
+
+        <li>
+            <i class="fa-solid fa-house"></i>
+            <span class="mx-3 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Media</span>
+            <ul class="dropdown-menu" style="text-overflow: clip;overflow: hidden;word-break: break-all; width: 5.5rem">
+                <li><a class="dropdown-item" href="/admin/media">Library</a></li>
+                <li><a class="dropdown-item" href="/admin/addmedia">Add new</a></li>
+            </ul>
+        </li>
+        <li>
+            <i class="fa-solid fa-house"></i>
+            <span class="mx-3 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Articals</span>
+            <ul class="dropdown-menu" style="text-overflow: clip;overflow: hidden;word-break: break-all; width: 5.5rem">
+                <li><a class="dropdown-item" href="#">All Blogs</a></li>
+                <li><a class="dropdown-item" href="#">Add new</a></li>
+                <li><a class="dropdown-item" href="#">Category</a></li>
+            </ul>
+        </li>
+        <li>
+            <i class="fa-solid fa-house"></i>
+            <span class="mx-3 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Courses</span>
+            <ul class="dropdown-menu" style="text-overflow: clip;overflow: hidden;word-break: break-all; width: 5.5rem">
+                <li><a class="dropdown-item" href="/admin/courses">All Courses</a></li>
+                <li><a class="dropdown-item" href="/admin/coursescategory">Category</a></li>
+            </ul>
+        </li>
+        <li><i class="fa-solid fa-house"></i><span class="mx-3">Apperarance</span>
+        </li>
+        <li><i class="fa-solid fa-house"></i><span class="mx-3">Users</span></li>
+        <li>
+            <i class="fa-solid fa-house"></i>
+            <span class="mx-3">Comments</span>
+        </li>
+        <li><i class="fa-solid fa-house"></i><span class="mx-3">Portfolio</span></li>
+        <li><i class="fa-solid fa-house"></i><span class="mx-3">Setting</span></li>
+        <li><i class="fa-solid fa-house"></i><span class="mx-3">Chat</span></li>
+        <li><i class="fa-solid fa-house"></i><span class="mx-3">Plugin</span></li>
+
+    </ul>
+</div>
+
+
+</body>
+</html>

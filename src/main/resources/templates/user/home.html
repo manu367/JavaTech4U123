@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" th:href="@{/css/user-index.css}">
+    <link rel="stylesheet" th:href="@{/css/user_imageslider.css}">
+</head>
+
+<body>
+
+<div class="container-fluid">
+    <!-- this is nav bar  -->
+    <div class="row laptop" id="navbar" style="z-index: 1;">
+        <div th:replace="~{fragements/usernavigation::navigationbar(${nav})}"></div>
+    </div>
+
+    <div class="row mobile p-2 bg-white rounded border">
+        <div class="col-12">
+            <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
+                <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/spotted-patterns.png" alt="spotted-patterns"/>
+            </button>
+
+            <div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="staticBackdropLabel">Offcanvas</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <div>
+                        I will not close if you click outside of me.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- header -->
+    <div class="row mt-md-5 bg-image overflow-hidden">
+        <div class="col-md-6">
+            <div class="text-javatech">
+                <h1>Desing & Makel <mark>Mast bold</mark> <br>Better Togeter.</h1>
+                <p>Manipulate and test the actual thing, together in real time, visually and in-context.</p>
+
+                <button class="custom-btn btn-2 ">
+                    <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/forward.png"
+                         alt="forward" />
+                    More
+                </button>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <img class="img-fluid java-header-img"
+                 src="https://fastly.picsum.photos/id/8/5000/3333.jpg?hmac=OeG5ufhPYQBd6Rx1TAldAuF92lhCzAhKQKttGfawWuA"
+                 alt="">
+        </div>
+
+    </div>
+    <div class="mt-2"></div>
+
+    <!-- service countdown -->
+    <div class="row mt-3 p-3">
+        <div class="col-md-12">
+            <div class="container-fluid p-3">
+                <div class="row ">
+                    <div class="col-sm-6 col-xl-3 tns-item tns-slide-active mt-1" >
+                        <div class="d-flex justify-content-center align-items-center p-4  bg-opacity-15 rounded-3 border"
+                             style="background-color: #F7C32E26;">
+                            <span class="display-6 lh-1 text-warning mb-0"><i class="fal fa-laptop-code"></i></span>
+                            <div class="ms-4 h6 fw-normal">
+                                <div class="d-flex">
+                                    <h5 class="mb-0 fw-bold">5000+</h5>
+                                </div>
+                                <p class="mb-0">Premium Courses</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-xl-3 tns-item tns-slide-active mt-1">
+                        <div class="d-flex justify-content-center align-items-center p-4  bg-opacity-15 rounded-3 border"
+                             style="background-color: #1D3B531A;">
+                            <span class="display-6 lh-1 text-warning mb-0"><i class="fal fa-laptop-code"></i></span>
+                            <div class="ms-4 h6 fw-normal">
+                                <div class="d-flex">
+                                    <h5 class="mb-0 fw-bold">5000+</h5>
+                                </div>
+                                <p class="mb-0">Premium Courses</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-xl-3 tns-item tns-slide-active mt-1" >
+                        <div class="d-flex justify-content-center align-items-center p-4  bg-opacity-15 rounded-3 border"
+                             style="background-color: #6F42C11A;">
+                            <span class="display-6 lh-1 text-warning mb-0"><i class="fal fa-laptop-code"></i></span>
+                            <div class="ms-4 h6 fw-normal">
+                                <div class="d-flex">
+                                    <h5 class="mb-0 fw-bold">5000+</h5>
+                                </div>
+                                <p class="mb-0">Premium Courses</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-xl-3 tns-item tns-slide-active mt-1" >
+                        <div class="d-flex justify-content-center align-items-center p-4  bg-opacity-15 rounded-3 border"
+                             style="background-color: #17A2B81A;">
+                            <span class="display-6 lh-1 text-warning mb-0"><i class="fal fa-laptop-code"></i></span>
+                            <div class="ms-4 h6 fw-normal">
+                                <div class="d-flex">
+                                    <h5 class="mb-0 fw-bold">5000+</h5>
+                                </div>
+                                <p class="mb-0">Premium Courses</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- service review -->
+    <div class="row mb-5 services">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="mx-md-5 float-start">Services</h2>
+                    <a href="#" class="btn float-end text-primary">view all</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="container-slider">
+                        <div class="slider banner-slider" data-slider>
+
+                            <div class="slider-container" data-slider-container>
+
+                                <div class="slider-item">
+                                    <div class="card img-holder" style="--width: 1000; --height: 560;cursor: pointer">
+                                        <img th:src="@{img/web_Design.png}" width="1000" height="560" alt=""
+                                             class="img-cover">
+                                    </div>
+                                </div>
+
+                                <div class="slider-item">
+                                    <div class="card img-holder" style="--width: 1000; --height: 560;cursor: pointer">
+                                        <img th:src="@{img/web_app.png}" width="1000" height="560" alt=""
+                                             class="img-cover">
+                                    </div>
+                                </div>
+
+                                <div class="slider-item">
+                                    <div class="card img-holder" style="--width: 1000; --height: 560;cursor: pointer">
+                                        <img th:src="@{img/mobile_app.png}" width="1000" height="560" alt=""
+                                             class="img-cover">
+                                    </div>
+                                </div>
+
+                                <div class="slider-item">
+                                    <div class="card img-holder" style="--width: 1000; --height: 560;">
+                                        <img th:src="@{img/web_app.png}" width="1000" height="560" alt=""
+                                             class="img-cover">
+                                    </div>
+                                </div>
+
+                                <div class="slider-item">
+                                    <div class="card img-holder" style="--width: 1000; --height: 560;">
+                                        <img th:src="@{img/web_app.png}" width="1000" height="560" alt=""
+                                             class="img-cover">
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <button class="btn-icon slider-control prev" data-slider-prev>
+                                <ion-icon name="arrow-back-sharp"></ion-icon>
+                            </button>
+
+                            <button class="btn-icon slider-control next" data-slider-next>
+                                <ion-icon name="arrow-forward-sharp"></ion-icon>
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--    small desription-->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="px-4 py-5 my-5 text-center">
+                <img class="d-block mx-auto mb-4" src="https://img.icons8.com/nolan/64/service.png" alt="" width="72"
+                     height="57">
+                <h1 class="display-5 fw-bold">Centered hero</h1>
+                <div class="col-lg-6 mx-auto">
+                    <p class="lead mb-4">Quickly design and customize responsive mobile-first sites with Bootstrap,
+                        the world’s most popular front-end open source toolkit, featuring Sass variables and mixins,
+                        responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- client-projects review -->
+    <div class="row mb-5 services">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="mx-md-5 float-start">Clients Projects</h2>
+                    <a href="#" class="btn float-end text-primary">view all</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="container-slider">
+                        <div class="slider banner-slider" data-slider>
+
+                            <div class="slider-container" data-slider-container>
+
+                                <div class="slider-item">
+                                    <div class="card img-holder" style="--width: 1000; --height: 560;cursor: pointer">
+                                        <img th:src="@{img/web_Design.png}" width="1000" height="560" alt=""
+                                             class="img-cover">
+                                    </div>
+                                </div>
+
+                                <div class="slider-item">
+                                    <div class="card img-holder" style="--width: 1000; --height: 560;cursor: pointer">
+                                        <img th:src="@{img/web_app.png}" width="1000" height="560" alt=""
+                                             class="img-cover">
+                                    </div>
+                                </div>
+
+                                <div class="slider-item">
+                                    <div class="card img-holder" style="--width: 1000; --height: 560;cursor: pointer">
+                                        <img th:src="@{img/mobile_app.png}" width="1000" height="560" alt=""
+                                             class="img-cover">
+                                    </div>
+                                </div>
+
+                                <div class="slider-item">
+                                    <div class="card img-holder" style="--width: 1000; --height: 560;">
+                                        <img th:src="@{img/web_app.png}" width="1000" height="560" alt=""
+                                             class="img-cover">
+                                    </div>
+                                </div>
+
+                                <div class="slider-item">
+                                    <div class="card img-holder" style="--width: 1000; --height: 560;">
+                                        <img th:src="@{img/web_app.png}" width="1000" height="560" alt=""
+                                             class="img-cover">
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <button class="btn-icon slider-control prev" data-slider-prev>
+                                <ion-icon name="arrow-back-sharp"></ion-icon>
+                            </button>
+
+                            <button class="btn-icon slider-control next" data-slider-next>
+                                <ion-icon name="arrow-forward-sharp"></ion-icon>
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mb-5 services">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="mx-md-5 float-start">Clients Projects</h2>
+                    <a href="#" class="btn float-end text-primary">view all</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="container-slider">
+                        <div class="slider banner-slider" data-slider>
+
+                            <div class="slider-container" data-slider-container>
+
+                                <div class="slider-item">
+                                    <div class="card img-holder" style="--width: 1000; --height: 560;cursor: pointer">
+                                        <img th:src="@{img/web_Design.png}" width="1000" height="560" alt=""
+                                             class="img-cover">
+                                    </div>
+                                </div>
+
+                                <div class="slider-item">
+                                    <div class="card img-holder" style="--width: 1000; --height: 560;cursor: pointer">
+                                        <img th:src="@{img/web_app.png}" width="1000" height="560" alt=""
+                                             class="img-cover">
+                                    </div>
+                                </div>
+
+                                <div class="slider-item">
+                                    <div class="card img-holder" style="--width: 1000; --height: 560;cursor: pointer">
+                                        <img th:src="@{img/mobile_app.png}" width="1000" height="560" alt=""
+                                             class="img-cover">
+                                    </div>
+                                </div>
+
+                                <div class="slider-item">
+                                    <div class="card img-holder" style="--width: 1000; --height: 560;">
+                                        <img th:src="@{img/web_app.png}" width="1000" height="560" alt=""
+                                             class="img-cover">
+                                    </div>
+                                </div>
+
+                                <div class="slider-item">
+                                    <div class="card img-holder" style="--width: 1000; --height: 560;">
+                                        <img th:src="@{img/web_app.png}" width="1000" height="560" alt=""
+                                             class="img-cover">
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <button class="btn-icon slider-control prev" data-slider-prev>
+                                <ion-icon name="arrow-back-sharp"></ion-icon>
+                            </button>
+
+                            <button class="btn-icon slider-control next" data-slider-next>
+                                <ion-icon name="arrow-forward-sharp"></ion-icon>
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- paid projects -->
+    <div class="row mb-5 services">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="mx-md-5 float-start">Paids Projects</h2>
+                    <a href="#" class="btn float-end text-primary">view all</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="container-slider">
+                        <div class="slider banner-slider" data-slider>
+
+                            <div class="slider-container" data-slider-container>
+
+                                <div class="slider-item">
+                                    <div class="card img-holder" style="--width: 1000; --height: 560;cursor: pointer">
+                                        <img th:src="@{img/web_Design.png}" width="1000" height="560" alt=""
+                                             class="img-cover">
+                                    </div>
+                                </div>
+
+                                <div class="slider-item">
+                                    <div class="card img-holder" style="--width: 1000; --height: 560;cursor: pointer">
+                                        <img th:src="@{img/web_app.png}" width="1000" height="560" alt=""
+                                             class="img-cover">
+                                    </div>
+                                </div>
+
+                                <div class="slider-item">
+                                    <div class="card img-holder" style="--width: 1000; --height: 560;cursor: pointer">
+                                        <img th:src="@{img/mobile_app.png}" width="1000" height="560" alt=""
+                                             class="img-cover">
+                                    </div>
+                                </div>
+
+                                <div class="slider-item">
+                                    <div class="card img-holder" style="--width: 1000; --height: 560;">
+                                        <img th:src="@{img/web_app.png}" width="1000" height="560" alt=""
+                                             class="img-cover">
+                                    </div>
+                                </div>
+
+                                <div class="slider-item">
+                                    <div class="card img-holder" style="--width: 1000; --height: 560;">
+                                        <img th:src="@{img/web_app.png}" width="1000" height="560" alt=""
+                                             class="img-cover">
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <button class="btn-icon slider-control prev" data-slider-prev>
+                                <ion-icon name="arrow-back-sharp"></ion-icon>
+                            </button>
+
+                            <button class="btn-icon slider-control next" data-slider-next>
+                                <ion-icon name="arrow-forward-sharp"></ion-icon>
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--    comparsions bars-->
+    <div class="row align-items-md-stretch m-3">
+        <div class="col-md-6">
+            <div class="h-100 p-5 text-bg-dark rounded-3">
+                <h2>Change the background</h2>
+                <p>Swap the background-color utility and add a `.text-*` color utility to mix up the jumbotron look.
+                    Then, mix and match with additional component themes and more.</p>
+                <button class="btn btn-outline-light" type="button">Example button</button>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="h-100 p-5 bg-light border rounded-3">
+                <h2>Add borders</h2>
+                <p>Or, keep it light and add a border for some added definition to the boundaries of your content.
+                    Be sure to look under the hood at the source HTML here as we've adjusted the alignment and
+                    sizing of both column's content for equal-height.</p>
+                <button class="btn btn-outline-secondary" type="button">Example button</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- projects projects -->
+    <div class="row mb-5 services">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="mx-md-5 float-start">Projects</h2>
+                    <a href="#" class="btn float-end text-primary">view all</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="container-slider">
+                        <div class="slider banner-slider" data-slider>
+
+                            <div class="slider-container" data-slider-container>
+
+                                <div class="slider-item">
+                                    <div class="card img-holder" style="--width: 1000; --height: 560;cursor: pointer">
+                                        <img th:src="@{img/web_Design.png}" width="1000" height="560" alt=""
+                                             class="img-cover">
+                                    </div>
+                                </div>
+
+                                <div class="slider-item">
+                                    <div class="card img-holder" style="--width: 1000; --height: 560;cursor: pointer">
+                                        <img th:src="@{img/web_app.png}" width="1000" height="560" alt=""
+                                             class="img-cover">
+                                    </div>
+                                </div>
+
+                                <div class="slider-item">
+                                    <div class="card img-holder" style="--width: 1000; --height: 560;cursor: pointer">
+                                        <img th:src="@{img/mobile_app.png}" width="1000" height="560" alt=""
+                                             class="img-cover">
+                                    </div>
+                                </div>
+
+                                <div class="slider-item">
+                                    <div class="card img-holder" style="--width: 1000; --height: 560;">
+                                        <img th:src="@{img/web_app.png}" width="1000" height="560" alt=""
+                                             class="img-cover">
+                                    </div>
+                                </div>
+
+                                <div class="slider-item">
+                                    <div class="card img-holder" style="--width: 1000; --height: 560;">
+                                        <img th:src="@{img/web_app.png}" width="1000" height="560" alt=""
+                                             class="img-cover">
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <button class="btn-icon slider-control prev" data-slider-prev>
+                                <ion-icon name="arrow-back-sharp"></ion-icon>
+                            </button>
+
+                            <button class="btn-icon slider-control next" data-slider-next>
+                                <ion-icon name="arrow-forward-sharp"></ion-icon>
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Products projects -->
+    <div class="row mb-5 services">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="mx-md-5 float-start">Products</h2>
+                    <a href="#" class="btn float-end text-primary">view all</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="container-slider">
+                        <div class="slider banner-slider" data-slider>
+
+                            <div class="slider-container" data-slider-container>
+
+                                <div class="slider-item">
+                                    <div class="card img-holder" style="--width: 1000; --height: 560;cursor: pointer">
+                                        <img th:src="@{img/web_Design.png}" width="1000" height="560" alt=""
+                                             class="img-cover">
+                                    </div>
+                                </div>
+
+                                <div class="slider-item">
+                                    <div class="card img-holder" style="--width: 1000; --height: 560;cursor: pointer">
+                                        <img th:src="@{img/web_app.png}" width="1000" height="560" alt=""
+                                             class="img-cover">
+                                    </div>
+                                </div>
+
+                                <div class="slider-item">
+                                    <div class="card img-holder" style="--width: 1000; --height: 560;cursor: pointer">
+                                        <img th:src="@{img/mobile_app.png}" width="1000" height="560" alt=""
+                                             class="img-cover">
+                                    </div>
+                                </div>
+
+                                <div class="slider-item">
+                                    <div class="card img-holder" style="--width: 1000; --height: 560;">
+                                        <img th:src="@{img/web_app.png}" width="1000" height="560" alt=""
+                                             class="img-cover">
+                                    </div>
+                                </div>
+
+                                <div class="slider-item">
+                                    <div class="card img-holder" style="--width: 1000; --height: 560;">
+                                        <img th:src="@{img/web_app.png}" width="1000" height="560" alt=""
+                                             class="img-cover">
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <button class="btn-icon slider-control prev" data-slider-prev>
+                                <ion-icon name="arrow-back-sharp"></ion-icon>
+                            </button>
+
+                            <button class="btn-icon slider-control next" data-slider-next>
+                                <ion-icon name="arrow-forward-sharp"></ion-icon>
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- overview question -->
+    <div class="row mt-2 mb-3 rounded border m-2 p-4">
+        <div class="col-md-4 review">
+            <img th:src="@{/img/movie-01.jpg}" alt="" class="img-fluid review-img float-lg-end">
+        </div>
+        <div class="col-md-8">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col">
+                        <div class="text-javatech">
+                            <h1>Desing & Makel <mark>Mast bold</mark> <br>Better Togeter.</h1>
+                            <p>Manipulate and test the actual thing, together in real time, visually and in-context.
+                            </p>
+
+                            <button class="custom-btn btn-2 ">
+                                <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/forward.png"
+                                     alt="forward" />
+                                More
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- overview 2nd question -->
+    <div class="row mt-2 rounded border m-2 p-4 overflow-second">
+        <div class="col-md-8">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col">
+                        <div class="text-javatech">
+                            <h1>Desing & Makel <mark>Mast bold</mark> <br>Better Togeter.</h1>
+                            <p>Manipulate and test the actual thing, together in real time, visually and in-context.
+                            </p>
+
+                            <button class="custom-btn btn-2 ">
+                                <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/forward.png"
+                                     alt="forward" />
+                                More
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 review-1" style="border-left: 1px solid gainsboro;">
+            <img th:src="@{/img/movie-01.jpg}" alt="" class="img-fluid review-img float-lg-start">
+        </div>
+    </div>
+
+
+
+    <!--    Testimonials -1-->
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <div class="container py-4 py-xl-5">
+                <div class="row mb-5">
+                    <div class="col-md-8 col-xl-6 text-center mx-auto">
+                        <h2>Testimonials</h2>
+                    </div>
+                </div>
+                <div class="row gy-4 row-cols-1 row-cols-sm-2 row-cols-lg-3">
+                    <div class="col">
+                        <div class="d-flex flex-column justify-content-center align-items-center">
+                            <p class="text-center">Nisi sit justo faucibus nec ornare amet, tortor torquent. Blandit class dapibus.</p>
+                            <div class="d-flex"><img class="rounded-circle flex-shrink-0 me-3 fit-cover" width="50" height="50" th:src="@{/img/user.jpg}" />
+                                <div>
+                                    <p class="fw-bold text-primary mb-0">John Smith</p>
+                                    <p class="text-muted mb-0">Erat netus</p>
+                                </div>
+                            </div>
+                            <div class="card border-0 shadow-none">
+                                <div class="card-body d-flex align-items-center p-0"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="d-flex flex-column justify-content-center align-items-center">
+                            <p class="text-center">Nisi sit justo faucibus nec ornare amet, tortor torquent. Blandit class dapibus.</p>
+                            <div class="d-flex"><img class="rounded-circle flex-shrink-0 me-3 fit-cover" width="50" height="50" th:src="@{/img/user.jpg}" />
+                                <div>
+                                    <p class="fw-bold text-primary mb-0">John Smith</p>
+                                    <p class="text-muted mb-0">Erat netus</p>
+                                </div>
+                            </div>
+                            <div class="card border-0 shadow-none">
+                                <div class="card-body d-flex align-items-center p-0"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="d-flex flex-column justify-content-center align-items-center">
+                            <p class="text-center">Nisi sit justo faucibus nec ornare amet, tortor torquent. Blandit class dapibus.</p>
+                            <div class="d-flex"><img class="rounded-circle flex-shrink-0 me-3 fit-cover" width="50" height="50" th:src="@{/img/user.jpg}" />
+                                <div>
+                                    <p class="fw-bold text-primary mb-0">John Smith</p>
+                                    <p class="text-muted mb-0">Erat netus</p>
+                                </div>
+                            </div>
+                            <div class="card border-0 shadow-none">
+                                <div class="card-body d-flex align-items-center p-0"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--    demo BIBEN DUM  FRINGI DICTUM, AUGUE PURU-->
+    <div class="row">
+        <div class="col-12">
+            <div class="container py-4 py-xl-5">
+                <div class="row gy-4 gy-md-0">
+                    <div class="col-md-6">
+                        <div class="p-xl-5 m-xl-5"><img class="rounded img-fluid w-100 fit-cover" style="min-height: 300px;" th:src="@{/img/web_app.png}" /></div>
+                    </div>
+                    <div class="col-md-6 d-md-flex align-items-md-center">
+                        <div style="max-width: 350px;">
+                            <h2 class="text-uppercase fw-bold">Biben dum<br />fringi dictum, augue purus</h2>
+                            <p class="my-3">Tincidunt laoreet leo, adipiscing taciti tempor. Primis senectus sapien, risus donec ad fusce augue interdum.</p><a class="btn btn-primary btn-lg me-2" role="button" href="#">Button</a><a class="btn btn-outline-primary btn-lg" role="button" href="#">Button</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!--    out team-->
+    <div class="row mt-3">
+        <div class="col-md-12">
+            <div class="container py-4 py-xl-5">
+                <div class="row mb-4 mb-lg-5">
+                    <div class="col-md-8 col-xl-6 text-center mx-auto">
+                        <h2>Our Team</h2>
+                        <p class="w-lg-50">Curae hendrerit donec commodo hendrerit egestas tempus, turpis facilisis nostra nunc. Vestibulum dui eget ultrices.</p>
+                    </div>
+                </div>
+                <div class="row gy-4 row-cols-2 row-cols-md-4">
+                    <div class="col">
+                        <div class="card border-0 shadow-none">
+                            <div class="card-body text-center d-flex flex-column align-items-center p-0">
+                                <img class="rounded-circle mb-3 fit-cover" width="130" height="130" th:src="@{/portfolio/hero2.jpg}" />
+                                <h5 class="fw-bold text-primary card-title mb-0"><strong>John Smith</strong></h5>
+                                <p class="text-muted card-text mb-2">Erat netus</p>
+                                <ul class="list-inline fs-6 text-muted w-100 mb-0">
+                                    <li class="list-inline-item text-center">
+                                        <div class="d-flex flex-column align-items-center"><svg class="bi bi-facebook" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16">
+                                            <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"></path>
+                                        </svg></div>
+                                    </li>
+                                    <li class="list-inline-item text-center">
+                                        <div class="d-flex flex-column align-items-center"><svg class="bi bi-twitter" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16">
+                                            <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"></path>
+                                        </svg></div>
+                                    </li>
+                                    <li class="list-inline-item text-center">
+                                        <div class="d-flex flex-column align-items-center"><svg class="bi bi-instagram" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16">
+                                            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"></path>
+                                        </svg></div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card border-0 shadow-none">
+                            <div class="card-body text-center d-flex flex-column align-items-center p-0">
+                                <img class="rounded-circle mb-3 fit-cover" width="130" height="130" th:src="@{/portfolio/hero2.jpg}" />
+                                <h5 class="fw-bold text-primary card-title mb-0"><strong>John Smith</strong></h5>
+                                <p class="text-muted card-text mb-2">Erat netus</p>
+                                <ul class="list-inline fs-6 text-muted w-100 mb-0">
+                                    <li class="list-inline-item text-center">
+                                        <div class="d-flex flex-column align-items-center"><svg class="bi bi-facebook" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16">
+                                            <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"></path>
+                                        </svg></div>
+                                    </li>
+                                    <li class="list-inline-item text-center">
+                                        <div class="d-flex flex-column align-items-center"><svg class="bi bi-twitter" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16">
+                                            <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"></path>
+                                        </svg></div>
+                                    </li>
+                                    <li class="list-inline-item text-center">
+                                        <div class="d-flex flex-column align-items-center"><svg class="bi bi-instagram" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16">
+                                            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"></path>
+                                        </svg></div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card border-0 shadow-none">
+                            <div class="card-body text-center d-flex flex-column align-items-center p-0">
+                                <img class="rounded-circle mb-3 fit-cover" width="130" height="130" th:src="@{/portfolio/hero2.jpg}" />
+                                <h5 class="fw-bold text-primary card-title mb-0"><strong>John Smith</strong></h5>
+                                <p class="text-muted card-text mb-2">Erat netus</p>
+                                <ul class="list-inline fs-6 text-muted w-100 mb-0">
+                                    <li class="list-inline-item text-center">
+                                        <div class="d-flex flex-column align-items-center"><svg class="bi bi-facebook" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16">
+                                            <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"></path>
+                                        </svg></div>
+                                    </li>
+                                    <li class="list-inline-item text-center">
+                                        <div class="d-flex flex-column align-items-center"><svg class="bi bi-twitter" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16">
+                                            <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"></path>
+                                        </svg></div>
+                                    </li>
+                                    <li class="list-inline-item text-center">
+                                        <div class="d-flex flex-column align-items-center"><svg class="bi bi-instagram" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16">
+                                            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"></path>
+                                        </svg></div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card border-0 shadow-none">
+                            <div class="card-body text-center d-flex flex-column align-items-center p-0">
+                                <img class="rounded-circle mb-3 fit-cover" width="130" height="130" th:src="@{/portfolio/hero2.jpg}" />
+                                <h5 class="fw-bold text-primary card-title mb-0"><strong>John Smith</strong></h5>
+                                <p class="text-muted card-text mb-2">Erat netus</p>
+                                <ul class="list-inline fs-6 text-muted w-100 mb-0">
+                                    <li class="list-inline-item text-center">
+                                        <div class="d-flex flex-column align-items-center"><svg class="bi bi-facebook" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16">
+                                            <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"></path>
+                                        </svg></div>
+                                    </li>
+                                    <li class="list-inline-item text-center">
+                                        <div class="d-flex flex-column align-items-center"><svg class="bi bi-twitter" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16">
+                                            <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"></path>
+                                        </svg></div>
+                                    </li>
+                                    <li class="list-inline-item text-center">
+                                        <div class="d-flex flex-column align-items-center"><svg class="bi bi-instagram" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16">
+                                            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"></path>
+                                        </svg></div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </dii>
+
+
+
+        <div class="row">
+            <div class="col-12">
+                <div class="container d-flex flex-column align-items-center py-4 py-xl-5">
+                    <div class="row gy-4 row-cols-1 row-cols-md-2 w-100" style="max-width: 800px;">
+                        <div class="col order-md-first">
+                            <div class="card"><img class="card-img w-100 d-block" src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png" />
+                                <div class="card-img-overlay text-center d-flex flex-column justify-content-center align-items-center p-4">
+                                    <h4>Title</h4>
+                                    <p>Volutpat habitasse risus posuere, commodo fusce donec. Turpis donec tristique.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col d-md-flex order-first justify-content-md-start align-items-md-end order-md-1">
+                            <div style="width: 80%;">
+                                <h2>Litora vivamus dui, nam aliquam aenean</h2>
+                                <p class="w-lg-50">Curae hendrerit donec commodo hendrerit egestas tempus, turpis facilisis nostra nunc. Vestibulum dui eget ultrices.</p>
+                            </div>
+                        </div>
+                        <div class="col order-md-2">
+                            <div class="card"><img class="card-img w-100 d-block" src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png" />
+                                <div class="card-img-overlay text-center d-flex flex-column justify-content-center align-items-center p-4">
+                                    <h4>Title</h4>
+                                    <p>Volutpat habitasse risus posuere, commodo fusce donec. Turpis donec tristique.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col order-md-2">
+                            <div class="card"><img class="card-img w-100 d-block" src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png" />
+                                <div class="card-img-overlay text-center d-flex flex-column justify-content-center align-items-center p-4">
+                                    <h4>Title</h4>
+                                    <p>Volutpat habitasse risus posuere, commodo fusce donec. Turpis donec tristique.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="container py-4 py-xl-5">
+                    <div class="row gy-4 gy-md-0">
+                        <div class="col-md-6 text-center text-md-start d-flex d-sm-flex d-md-flex justify-content-center align-items-center justify-content-md-start align-items-md-center justify-content-xl-center">
+                            <div style="max-width: 350px;">
+                                <h2 class="text-uppercase fw-bold">Biben dum<br />fringi dictum, augue purus</h2>
+                                <p class="my-3">Tincidunt laoreet leo, adipiscing taciti tempor. Primis senectus sapien, risus donec ad fusce augue interdum.</p><a class="btn btn-primary btn-lg me-2" role="button" href="#">Button</a><a class="btn btn-outline-primary btn-lg" role="button" href="#">Button</a>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="p-xl-5 m-xl-5"><img class="rounded img-fluid w-100 fit-cover" style="min-height: 300px;" src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png" /></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- footer -->
+        <div class="row bg-dark">
+            <div class="col-md-12">
+                <footer class="text-center">
+                    <div class="container text-white py-4 py-lg-5">
+                        <ul class="list-inline">
+                            <li class="list-inline-item me-4"><a class="link-light" href="#">Web design</a></li>
+                            <li class="list-inline-item me-4"><a class="link-light" href="#">Development</a></li>
+                            <li class="list-inline-item"><a class="link-light" href="#">Hosting</a></li>
+                        </ul>
+                        <ul class="list-inline">
+                            <li class="list-inline-item me-4"><svg class="bi bi-facebook text-light"
+                                                                   xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
+                                                                   viewBox="0 0 16 16">
+                                <path
+                                        d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z">
+                                </path>
+                            </svg></li>
+                            <li class="list-inline-item me-4"><svg class="bi bi-twitter text-light"
+                                                                   xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
+                                                                   viewBox="0 0 16 16">
+                                <path
+                                        d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z">
+                                </path>
+                            </svg></li>
+                            <li class="list-inline-item"><svg class="bi bi-instagram text-light"
+                                                              xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
+                                                              viewBox="0 0 16 16">
+                                <path
+                                        d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z">
+                                </path>
+                            </svg></li>
+                        </ul>
+                        <p class="text-muted mb-0">Copyright © 2023 Brand</p>
+                    </div>
+                </footer>
+            </div>
+        </div>
+
+    </div>
+
+
+
+</div>
+
+
+
+
+
+
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+<script th:src="@{/js/user-style.js}"></script>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+
+<script>
+    var img = document.querySelectorAll(".side-javatech4u div img");
+    img.forEach(item => {
+        item.style.width = "200px";
+        item.style.height = "200px";
+    });
+</script>
+
+</html>

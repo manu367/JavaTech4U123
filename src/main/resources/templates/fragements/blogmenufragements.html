@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:fragment="blogmenu(navmenu,homemenu)" class="row">
+    <div class="col-md-12">
+        <div class="row border p-1">
+            <div class="col-md-3  text-center">
+                <img src="../img/javatech.png" alt="" class="img-fluid w-25 ">
+            </div>
+            <div class="col-md-5 flex-row  mt-3">
+                <div class="search-bar bg-white">
+                    <input type="search" name="search" id="search" placeholder="Search Courses..">
+                    <div style="border-left: 1px solid rgba(0, 0, 0, 0.332);">
+                        <button>
+                            <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/search--v1.png"
+                                 alt="search--v1" />
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 ">
+                <div class="mt-3">
+                    <ul class="nav flex-row justify-content-around">
+                        <li class="nav-item"><a href="#" class="nav-link text-black">Home</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link text-black">Video Course</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link text-black">Articals</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link text-black">Buy Courses</a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- all courses menus -->
+        <div class="row mt-3">
+            <div class="col-12 p-2">
+                <ul class="nav flex-row justify-content-between menus flex-wrap" style="background-color:#115f64 ;">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Home</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
